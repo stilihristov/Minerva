@@ -28,3 +28,7 @@ Setup
 	https://puredata.info/downloads/pd-extended-0-43-3-on-raspberry-pi-raspbian-wheezy-armhf
 
 	3. Run PureData
+
+		sudo modprobe snd-pcm044
+
+		sudo pd -rt -alsa -audiodev2,2 -autopatch -verbose -r 4800 -audiobug 32 - noadc -channels 2 -open reverb_effect.pd 
