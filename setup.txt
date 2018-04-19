@@ -1,0 +1,30 @@
+Minerva - Guitar Effects using PureData and ALSA on Raspberry Pi
+Bill Of Materials For the Project:
+	The initial idea ensured that the inputed audio signal was converted with an ADC + passed through a preamp.
+	A failure to get the right parts and materials led to using a simple external audio card - https://rlx.sk/en/breakout-boards-shields/4882-usb-20-51-audiocontroller-logilink.html
+	- 1 Raspberry Pi 
+	- 1 External USB Audio Card
+	- 1 6mm to 3.5 audio adapter
+	- 1 6mm caudio cable
+	- 1 pair of headphones/speakers
+
+
+Setup
+	1. Connecting the USB audio card and setting up ALSA
+	- Connecting the USB is pretty easy just plug it into 1 of the 4 available USB ports on the RASPBERRY microcontroller
+	- Install the latest ALSA drivers for Raspbian. 
+	
+	Advanced Linux Sound Architecture (ALSA) is a software framework and part of the Linux kernel that provides an application programming interface (API) for sound card device drivers.		
+	
+		sudo apt-get install alsa-utils
+		sudo modprobe snd_bcm2835
+
+	- Set external soundcard to default ALSA playback device\
+
+		sudo amixer cset numid=3
+
+	2. Setup PureData
+
+	https://puredata.info/downloads/pd-extended-0-43-3-on-raspberry-pi-raspbian-wheezy-armhf
+
+	3. Run PureData
